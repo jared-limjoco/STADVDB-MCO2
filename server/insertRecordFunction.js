@@ -4,6 +4,7 @@ async function insertRecord(id, name, year, rating, node1_db, node2_db, node3_db
         name_new_val, year_old_val, year_new_val, rating_old_val, rating_new_val) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);`
     const transaction_no = Math.floor(Math.random() * 100);
+    console.log("entered insert operation");
 
     try {
         const insertId = await new Promise((resolve, reject) => {

@@ -93,7 +93,8 @@ addBtn.onclick = function (){
     nameInput.value = '';
     yearInput.value = '';
     ratingInput.value = '';
-
+    console.log("entered insert index.js");
+    
     fetch('https://stadvdb-mco2.up.railway.app/insert', {
         headers: {
             'Content-type': 'application/json'

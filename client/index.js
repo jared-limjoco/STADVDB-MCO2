@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => { //function()
-    fetch('stadvdb-mco2.up.railway.app/getAll')
+    fetch('https://stadvdb-mco2.up.railway.app/getAll')
     .then(res => res.json())
     .then(data => loadHTMLTable(data['data']));
 });

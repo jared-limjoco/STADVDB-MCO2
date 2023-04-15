@@ -22,7 +22,7 @@ reportBtn.onclick = function(){
     const reportTable = document.querySelector('#report-table');
     reportTable.hidden = false
 
-    fetch('http://localhost:5000/report')
+    fetch('stadvdb.up.railway.app/report')
     .then(res => res.json())
     .then(data => loadReport(data['data']));
 }
@@ -31,13 +31,13 @@ searchBtn.onclick = function(){
     const searchNameValue = document.querySelector('#search-name-input').value;
     const searchYearValue = document.querySelector('#search-year-input').value;
 
-    fetch('http://localhost:5000/search/' + searchNameValue + "/" + searchYearValue)
+    fetch('stadvdb.up.railway.app/search/' + searchNameValue + "/" + searchYearValue)
     .then(res => res.json())
     .then(data => loadHTMLTable(data['data']));
 }
 
 function deleteRowById(id){
-    fetch('http://localhost:5000/delete/' + id, {
+    fetch('stadvdb.up.railway.app/delete/' + id, {
         method: 'DELETE'
     })
     .then(response => response.json())
@@ -58,7 +58,7 @@ function handleEditRow(id){
 updateBtn.onclick = function(){
     const updateRatingeInput = document.querySelector('#update-rating-input');
 
-    fetch('http://localhost:5000/update', {
+    fetch('stadvdb.up.railway.app/update', {
         method: 'PATCH',
         headers: {
             'Content-type': 'application/json'
@@ -94,7 +94,7 @@ addBtn.onclick = function (){
     yearInput.value = '';
     ratingInput.value = '';
 
-    fetch('http://localhost:5000/insert', {
+    fetch('stadvdb.up.railway.app/insert', {
         headers: {
             'Content-type': 'application/json'
         },
